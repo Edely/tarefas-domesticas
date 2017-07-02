@@ -1,0 +1,84 @@
+@import url('assets/css/open-sans.css');
+
+*{
+	font-family: 'Open Sans';
+}
+
+.topo h1,
+.topo p{
+	width: 100%;
+	text-align: center;
+}
+
+.wrapper-panel .panel-boding{
+	overflow: overlay;
+}
+
+@media(max-width:768px){
+	.wrapper-panel .panel-boding{
+		max-height: 200px;
+	}
+}
+
+@media(min-width:769px){
+	.wrapper-panel .panel-boding{
+		max-height: 350px;
+	}
+}
+
+.butoes{
+	display: inline-block;
+}
+
+.topo{
+	margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.adicionar{
+	margin-bottom: 30px;
+}
+
+input#tarefa,
+input#responsavel,
+input#prazo{
+	border-radius: 5px;
+}
+
+.row.adicionar > div{
+	text-align: center;
+}
+
+label{
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.fa-check-circle,
+.fa-plus-circle{
+	color: green;	
+}
+
+.fa-times-circle,
+.fa-minus-circle{
+	color: red;
+}
+.fa-calendar{
+	color: blue;
+	cursor: pointer;
+}
+
+.fa{
+	font-size: 20px;
+	padding-right: 10px;
+}
+
+th,
+td{
+	text-align: center;
+}
+
+.change-date{
+	height: 40px;
+    width: 200px;
+}

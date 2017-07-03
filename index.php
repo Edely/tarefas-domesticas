@@ -1,7 +1,7 @@
 <?php
 
 $erro = null;
-$valido = false;
+$valido = null;
 $data = strtotime('today midnight');
 
 	if( isset($_REQUEST['validar']) && $_REQUEST['validar'] == true)
@@ -26,6 +26,8 @@ $data = strtotime('today midnight');
 		if($erro == null)
 		{
 			$valido = true;
+		}else{
+			$valido = false;
 		}	
 	}
 	
@@ -42,12 +44,10 @@ $data = strtotime('today midnight');
 </head>
 <body>
 
-	<?php
 	
+	<?php
 		if($valido == true)
 		{
-			echo "<p> Tarefa adicionada com sucesso! </p>";	
-			
 				try
 				{
 					$connection = new PDO("mysql:host=localhost;dbname=tarefas", "root", 123456);
@@ -92,11 +92,14 @@ $data = strtotime('today midnight');
 					<div class='modal-content'>
 					  <div class='modal-header'>
 						<button type='button' class='close fechar' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-						<h4 class='modal-title' id='modalErrosLabel'>Corrija os Erros</h4>
+<!--						<h4 class='modal-title' id='modalErrosLabel'>Corrija os Erros</h4>-->
 					  </div>
 					  <div class='modal-body'>
 					  	<?php
-						  	if($valido != true){
+						  	if($valido == true){
+								echo "<p> Tarefa adicionada com sucesso! </p>";
+							}
+						  	else{
 								if(isset($erro)){
 									echo "Corrija os seguintes erros: <br>" . $erro . " <br>";		
 								}
@@ -393,35 +396,32 @@ $data = strtotime('today midnight');
 	<script src="assets/js/jquery-3.2.1.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	
-	
 
+	<script>
+				
+		$(document).ready( function(){
+				
 	<?php
-		if($valido != true){
-			if(isset($erro)){
+		if(isset($valido)){
 				echo "
-				<script>
-				
-				$(document).ready( function(){
-				
 					$('#modalErros').addClass('in').css('display', 'block');
 				
 					$('.fechar, #fechar').click( function(){
 						$('#modalErros').removeClass('in').css('display', 'none');
 					});
-					
-				});
-				
-				</script>";		
+				";		
 			}
-		}
 	?>
-	
+					
+		});
+				
+	</script>
 	<script>
 	    var objeto = <?php echo json_encode($arrayId); ?>;
-		
-		console.log(objeto);
-		
+				
 		$(document).ready(function(){
+			
+			
 			$('.alterar').click(function(){
 				$('#modalMudarData').addClass('in').css('display', 'block');
 				//pega a id da tarefa clicada
@@ -433,9 +433,8 @@ $data = strtotime('today midnight');
 				$('.fechar-data, #fechar-data').click( function(){
 					$('#modalMudarData').removeClass('in').css('display', 'none');
 				});
-				
-				
 			});
+			
 		});
 	</script>
 </body>

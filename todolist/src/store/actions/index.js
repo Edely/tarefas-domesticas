@@ -1,0 +1,3 @@
+export{
+    loadTarefas
+}  from './tarefas';

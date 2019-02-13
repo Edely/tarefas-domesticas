@@ -1,0 +1,72 @@
+.main{
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media(min-width: 1280px){
+  .main{
+    width: 1024px;
+  }
+}
+
+.header{
+    text-align: center;
+    padding: 20px;
+    font-size: 36px;
+}
+
+.lista-tarefas{
+  width: 50%;
+  display: block;
+  float: left;
+}
+
+.lista-tarefas__header{
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.lista-tarefa__itens {
+  display: flex;
+  min-height: 60px;
+  margin: 10px 010px 10px;
+  align-items: flex-start;
+}
+
+.lista-tarefa__itens:nth-child(2n+1) {
+  background-color: #ccc;
+}
+
+.lista-tarefa__itens__info {
+  float: left;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.lista-tarefa__itens__info--name{
+  font-weight: bold;
+  width: 20%;
+}
+
+.lista-tarefa__itens__info--description{
+  width: 30%;
+}
+
+.lista-tarefa__itens__info--owner{
+  width: 10%;
+}
+
+.lista-tarefa__itens__info--date{
+  width: 25%;
+}
+
+.tarefas-abertas .tarefa-fechada{
+  color: #f34;
+}
+
+.tarefas-concluidas .lista-tarefa__itens__info{
+  color: #777;
+}

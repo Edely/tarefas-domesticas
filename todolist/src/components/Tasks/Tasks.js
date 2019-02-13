@@ -31,5 +31,4 @@ const tasks = (props) => {
     );
 }
 
-
 export default tasks;

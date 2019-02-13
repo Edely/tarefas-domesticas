@@ -1,1 +1,4 @@
-export const LOAD_TAREFAS = "LOAD_TAREFAS";
+export const LOAD_TASKS = "LOAD_TASKS";
+export const ARCHIVE_TASKS = "ARCHIVE_TASKS";
+export const READD_TASKS = "READD_TASKS";
+export const SCHEDULE_TASKS = "SCHEDULE_TASKS";

@@ -1,3 +1,3 @@
-export{
-    loadTarefas
-}  from './tarefas';
+export {
+    loadTasks
+} from './tasks';

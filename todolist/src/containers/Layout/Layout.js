@@ -1,40 +1,42 @@
 import React, { Component } from 'react';
-import Tarefas from '../../components/Tarefas/Tarefas';
+import Tasks from '../../components/Tasks/Tasks';
 import Aux from '../../hoc/Auxiliary/Auxiliary';
 import * as actions from '../../store/actions';
 import { connect } from 'react-redux';
 
-class Layout extends Component{
+class Layout extends Component {
 
-    render(){
-        let tarefas =  null;
+    render() {
+        let tasks = null;
 
-        if(this.props.tarefas){
-            const tarefasConcluidas= this.props.tarefas.filter(tarefa => tarefa.feita);
-            const tarefasAbertas = this.props.tarefas.filter(tarefa => !tarefa.feita);
+        console.log(tasks)
 
-            tarefas = (
-                <Aux>     
-                    <Tarefas tarefas={tarefasAbertas} concluida={false}/>
-                    <Tarefas tarefas={tarefasConcluidas} concluida/>   
+        if (this.props.tasks) {
+            const concludedTasks = this.props.tasks.filter(task => task.feita);
+            const openTasks = this.props.tasks.filter(task => !task.feita);
+
+            tasks = (
+                <Aux>
+                    <Tasks tasks={openTasks} concluded={false} />
+                    <Tasks tasks={concludedTasks} concluded />
                 </Aux>
             );
         };
 
-        return tarefas;
+        return tasks;
     };
 };
 
 
-const mapStateToProps = state =>{
-    return{
-        tarefas : state.tarefas
+const mapStateToProps = state => {
+    return {
+        tasks: state.tasks
     }
 }
 
-const mapDispatchToProps = dispatch =>{
+const mapDispatchToProps = dispatch => {
     return {
-        onLoadTarefas : dispatch(actions.loadTarefas())
+        onLoadTasks: dispatch(actions.loadTasks())
     }
-} 
+}
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);

@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-  tarefas: null
+  tasks: null
 }
 
 const placeholderTarefas = [
@@ -63,6 +63,17 @@ const placeholderTarefas = [
   }
 ];
 
+const addTask = (state) => {
+  console.log(state)
+  return {
+    nome: 'Jogar BOla',
+    descricao: 'Ou amarelinha',
+    responsavel: 'Fernanda',
+    prazo: '1555361449333',
+    feita: false
+  }
+}
+
 
 
 const reducer = (state = initialState, action) => {
@@ -76,6 +87,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         tasks: placeholderTarefas
       };
+      
+    case actionTypes.ADD_TASK:
+      console.log('foi, bagaça')
+      return state;
 
     default:
       return state;

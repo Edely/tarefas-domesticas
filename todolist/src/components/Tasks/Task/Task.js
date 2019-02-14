@@ -8,10 +8,10 @@ const tarefa = (props) => {
         date = new Date(parseInt(props.prazo));
         date = twoDigits(date.getDate()) + '/' + twoDigits(date.getMonth()) + '/' + date.getFullYear() + '  ' + date.getHours() + ':' + twoDigits(date.getMinutes());
     }
-    const classesDate = ['task-list__itens__info', 'task-list__itens__info--date'];
+    let classesDate = ['task-list__itens__info', 'task-list__itens__info--date'];
 
     if (props.atrasada) {
-        classesDate.push('tarefa-fechada');
+        classesDate.push('closed-task');
     }
 
     return (
@@ -20,7 +20,7 @@ const tarefa = (props) => {
             <div className={'task-list__itens__info task-list__itens__info--description'}>{props.descricao}</div>
             <div className={'task-list__itens__info task-list__itens__info--owner'}>{props.responsavel}</div>
             <div className={classesDate.join(' ')}>{date}</div>
-            <div className={'task-list__itens__info'}><Button>Eas</Button></div>
+            <div className={'task-list__itens__info'}><Button clicked={() => props.taskAdd()}>Eas</Button></div>
         </div>
     );
 };

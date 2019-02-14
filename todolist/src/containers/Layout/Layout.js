@@ -6,10 +6,12 @@ import { connect } from 'react-redux';
 
 class Layout extends Component {
 
+    componentWillMount(){
+        this.props.onLoadTasks()
+    }
+
     render() {
         let tasks = null;
-
-        console.log(tasks)
 
         if (this.props.tasks) {
             const concludedTasks = this.props.tasks.filter(task => task.feita);
@@ -17,7 +19,7 @@ class Layout extends Component {
 
             tasks = (
                 <Aux>
-                    <Tasks tasks={openTasks} concluded={false} />
+                    <Tasks tasks={openTasks} concluded={false} taskAdded={() => this.props.onAddTask()}/>
                     <Tasks tasks={concludedTasks} concluded />
                 </Aux>
             );
@@ -36,7 +38,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onLoadTasks: dispatch(actions.loadTasks())
+        onLoadTasks: () => dispatch(actions.loadTasks()),
+        onAddTask: () => dispatch(actions.addTask())
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);

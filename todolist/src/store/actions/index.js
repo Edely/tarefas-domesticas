@@ -1,3 +1,4 @@
 export {
-    loadTasks
+    loadTasks,
+    addTask
 } from './tasks';

@@ -5,3 +5,9 @@ export const loadTasks = () => {
         type: actionTypes.LOAD_TASKS
     };
 };
+
+export const addTask = () =>{
+    return{
+        type: actionTypes.ADD_TASK
+    };
+};

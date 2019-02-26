@@ -6,4 +6,5 @@ class Task(models.Model):
     descricao = models.TextField()
     responsavel = models.CharField(max_length=20)
     prazo = models.DateTimeField()
-    created = models.DateTimeFiel(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True)
+    feita = models.BooleanField(default=False)

@@ -81,11 +81,13 @@ const reducer = (state = initialState, action) => {
         tarefa.atrasada = tarefa.prazo <= new Date().getTime();
         return null;
       });
-
+      console.log("action");
+      console.log(action);
       return {
         ...state,
-        tasks: placeholderTarefas
+        tasks: action.tasks
       };
+    //return { ...state, tasks: actionTypes.LOAD_TASKS };
 
     case actionTypes.ADD_TASK:
       console.log("foi, bagaça");

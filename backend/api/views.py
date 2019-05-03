@@ -2,6 +2,7 @@ from api.models import Task
 from rest_framework import permissions, viewsets
 from api.serializers import TaskSerializer, UserSerializer, TasksSerializer
 from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
 
 
 class TaskViewSet(viewsets.ModelViewSet):
@@ -22,3 +23,10 @@ class TasksViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+def FilterAllView(request):
+    if request.content_type != 'application/json':
+        template_name = 'api/index.html'
+        return render(request, template_name)
+    return redirect('/api')

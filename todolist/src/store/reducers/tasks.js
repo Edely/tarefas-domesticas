@@ -1,80 +1,78 @@
-import * as actionTypes from '../actions/actionTypes';
+import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
   tasks: null
-}
+};
 
 const placeholderTarefas = [
   {
-    nome: 'Lavar os Pratos',
-    descricao: 'A melhor das tarefas. Quem não gosta?!!!',
-    responsavel: 'Edely',
-    prazo: '657580199000',
+    nome: "Lavar os Pratos",
+    descricao: "A melhor das tarefas. Quem não gosta?!!!",
+    responsavel: "Edely",
+    prazo: "657580199000",
     feita: false
   },
   {
-    nome: 'Alimentar os Gatos',
-    descricao: 'São uns monstros. Não demore!',
-    responsavel: 'Selina',
-    prazo: '1551301799000',
+    nome: "Alimentar os Gatos",
+    descricao: "São uns monstros. Não demore!",
+    responsavel: "Selina",
+    prazo: "1551301799000",
     feita: true
   },
   {
-    nome: 'Cortar a grama',
-    descricao: 'Embora não tenhamos!',
-    responsavel: 'Edely',
-    prazo: '657580179080',
+    nome: "Cortar a grama",
+    descricao: "Embora não tenhamos!",
+    responsavel: "Edely",
+    prazo: "657580179080",
     feita: false
   },
   {
-    nome: 'Dar banho nos jacarés',
-    descricao: 'Extremamente dóceis',
-    responsavel: 'Camila',
-    prazo: '1555361489333',
+    nome: "Dar banho nos jacarés",
+    descricao: "Extremamente dóceis",
+    responsavel: "Camila",
+    prazo: "1555361489333",
     feita: false
   },
   {
-    nome: 'Cortar a grama',
-    descricao: 'Embora não tenhamos!',
-    responsavel: 'Edely',
-    prazo: '657580179080',
+    nome: "Cortar a grama",
+    descricao: "Embora não tenhamos!",
+    responsavel: "Edely",
+    prazo: "657580179080",
     feita: false
   },
   {
-    nome: 'Dar banho nos jacarés',
-    descricao: 'Extremamente dóceis',
-    responsavel: 'Camila',
-    prazo: '1555361489333',
+    nome: "Dar banho nos jacarés",
+    descricao: "Extremamente dóceis",
+    responsavel: "Camila",
+    prazo: "1555361489333",
     feita: true
   },
   {
-    nome: 'Cortar a grama',
-    descricao: 'Embora não tenhamos!',
-    responsavel: 'Edely',
-    prazo: '657580179080',
+    nome: "Cortar a grama",
+    descricao: "Embora não tenhamos!",
+    responsavel: "Edely",
+    prazo: "657580179080",
     feita: false
   },
   {
-    nome: 'Dar banho nos jacarés',
-    descricao: 'Extremamente dóceis',
-    responsavel: 'Camila',
-    prazo: '1555361489333',
+    nome: "Dar banho nos jacarés",
+    descricao: "Extremamente dóceis",
+    responsavel: "Camila",
+    prazo: "1555361489333",
     feita: false
   }
 ];
 
-const addTask = (state) => {
-  console.log(state)
+const addTask = state => {
+  console.log(state);
   return {
-    nome: 'Jogar BOla',
-    descricao: 'Ou amarelinha',
-    responsavel: 'Fernanda',
-    prazo: '1555361449333',
+    nome: "Jogar Bola",
+    descricao: "Ou amarelinha",
+    responsavel: "Fernanda",
+    prazo: "1555361449333",
     feita: false
-  }
-}
-
-
+  };
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -83,18 +81,19 @@ const reducer = (state = initialState, action) => {
         tarefa.atrasada = tarefa.prazo <= new Date().getTime();
         return null;
       });
+
       return {
         ...state,
         tasks: placeholderTarefas
       };
-      
+
     case actionTypes.ADD_TASK:
-      console.log('foi, bagaça')
-      return state;
+      console.log("foi, bagaça");
+      return addTask(state);
 
     default:
       return state;
   }
-}
+};
 
 export default reducer;

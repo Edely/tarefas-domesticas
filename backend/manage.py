@@ -2,8 +2,14 @@
 import os
 import sys
 
+
 if __name__ == '__main__':
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'base.settings')
+    env = os.getenv('DOMESTIC_ENV', 'production')
+    if env != 'production' or env == 'local':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'base.settings.local')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+                              'base.settings.production')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

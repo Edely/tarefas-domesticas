@@ -1,0 +1,50 @@
+.tasks-list__item {
+    display: flex;
+    min-height: 60px;
+    margin: 10px 010px 10px;
+    align-items: flex-start;
+}
+
+.tasks-list__item:nth-child(2n+1) {
+    /* background-color: #ccc; */
+}
+
+.tasks-list__item__info {
+    float: left;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.tasks-list__item__info--header{
+    width: 100%;
+}
+
+.tasks-list__item__info--name {
+    font-weight: bold;
+    /* width: 20%; */
+}
+
+.tasks-list__item__info--description {
+    /* width: 30%; */
+}
+
+.tasks-list__item__info--owner {
+    /* width: 10%; */
+}
+
+.tasks-list__item__info--date {
+    /* width: 25%; */
+}
+
+.open-tasks .closed-task {
+    color: #f34;
+}
+
+.open-tasks .tasks-list__item {
+    background-color: rgba(46, 41, 78, 1);
+}
+
+.concluded-tasks .tasks-list__item__info {
+    /* color: #777; */
+}

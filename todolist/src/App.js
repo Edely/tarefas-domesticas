@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <Aux>
-        <header className={"header"}>Tarefas Domésticas</header>
+        <header className={"header"}>Frank Hebert</header>
         <main className={"main"}>
           <Layout />
         </main>

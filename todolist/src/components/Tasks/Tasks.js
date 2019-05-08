@@ -1,9 +1,10 @@
 import React from "react";
 import Task from "./Task/Task";
+import './Tasks.css'
 
 const tasks = props => {
   let tasks = null;
-  const taskClasses = ["task-list"];
+  const taskClasses = ["tasks-list"];
 
   props.concluida
     ? taskClasses.push("concluded-tasks")
@@ -28,7 +29,7 @@ const tasks = props => {
 
   return (
     <div className={taskClasses.join(" ")}>
-      <div className={"task-list__header"}>
+      <div className={"tasks-list__header"}>
         {" "}
         {props.concluded
           ? "Tarefas Concluídas/Arquivadas"

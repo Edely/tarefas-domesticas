@@ -3,6 +3,7 @@ import Tasks from "../../components/Tasks/Tasks";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import * as actions from "../../store/actions";
 import { connect } from "react-redux";
+import './Layout.css';
 
 class Layout extends Component {
   componentWillMount() {
@@ -25,6 +26,8 @@ class Layout extends Component {
           <Tasks tasks={concludedTasks} concluded />
         </Aux>
       );
+    }else{
+      tasks = <h1 className="title no-tasks">Não há tarefas cadastradas</h1>;
     }
 
     return tasks;

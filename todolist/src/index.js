@@ -1,6 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import "./index.css";
@@ -8,11 +9,10 @@ import App from "./App";
 import reducer from "./store/reducers/tasks";
 import * as serviceWorker from "./serviceWorker";
 
-const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(thunk)
-);
+const composeEnhancer =
+  (window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) || compose;
+
+const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)));
 const app = (
   <Provider store={store}>
     <App />

@@ -1,3 +1,38 @@
+.maastricht_blue_bg{
+    background-color: rgba(1, 22, 56, 1);
+} 
+.maastricht_blue_color{
+    color: rgba(1, 22, 56, 1);
+} 
+
+.space_cadet_bg{
+    background-color: rgba(46, 41, 78, 1);
+} 
+.space_cadet_color{
+    color: rgba(46, 41, 78, 1);
+} 
+
+.purpureos_bg{
+    background-color: rgba(144, 85, 162, 1);
+} 
+.purpureos_color{
+    color: rgba(144, 85, 162, 1);
+} 
+
+.medium_ruby_bg{
+    background-color: rgba(170, 68, 101, 1);
+} 
+.medium_ruby_color{
+    color: rgba(170, 68, 101, 1);
+} 
+
+.japanese_violet_bg{
+    background-color: rgba(91, 55, 88, 1);
+} 
+.japanese_violet_color{
+    color: rgba(91, 55, 88, 1);
+} 
+
 .main {
     width: 100%;
     display: block;
@@ -14,59 +49,4 @@
     text-align: center;
     padding: 20px;
     font-size: 36px;
-}
-
-.task-list {
-    width: 50%;
-    display: block;
-    float: left;
-}
-
-.task-list__header {
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 20px;
-}
-
-.task-list__itens {
-    display: flex;
-    min-height: 60px;
-    margin: 10px 010px 10px;
-    align-items: flex-start;
-}
-
-.task-list__itens:nth-child(2n+1) {
-    background-color: #ccc;
-}
-
-.task-list__itens__info {
-    float: left;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.task-list__itens__info--name {
-    font-weight: bold;
-    width: 20%;
-}
-
-.task-list__itens__info--description {
-    width: 30%;
-}
-
-.task-list__itens__info--owner {
-    width: 10%;
-}
-
-.task-list__itens__info--date {
-    width: 25%;
-}
-
-.open-tasks .closed-task {
-    color: #f34;
-}
-
-.concluded-tasks .task-list__itens__info {
-    color: #777;
 }

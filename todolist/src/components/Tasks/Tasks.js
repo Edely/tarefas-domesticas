@@ -9,12 +9,13 @@ const tasks = props => {
   props.concluida
     ? taskClasses.push("concluded-tasks")
     : taskClasses.push("open-tasks");
-  console.log("props");
-  console.log(props);
+  //console.log("props");
+  //console.log(props);
   if (props.tasks) {
     tasks = props.tasks.map(task => {
       return (tasks = (
         <Task
+          key={task.name+task.deadline}
           nome={task.name}
           descricao={task.description}
           prazo={task.deadline}

@@ -2,8 +2,8 @@ import * as actionTypes from "./actionTypes";
 import axios from "../../axios-config";
 
 export const loadTasksFinished = tasks => {
-  console.log("tasks");
-  console.log(tasks[0]);
+  //console.log("tasks");
+  //console.log(tasks[0]);
   return {
     type: actionTypes.LOAD_TASKS,
     tasks: tasks
@@ -11,7 +11,7 @@ export const loadTasksFinished = tasks => {
 };
 
 export const loadTasks = () => {
-  console.log("aquuiii");
+  //console.log("aquuiii");
   return dispatch => {
     axios
       .get("tasks.json")

@@ -27,7 +27,9 @@ class Layout extends Component {
         </Aux>
       );
     }else{
-      tasks = <h1 className="title no-tasks">Não há tarefas cadastradas</h1>;
+      tasks = <Aux>
+                <h1 className="title no-tasks">Não há tarefas cadastradas</h1>                
+              </Aux>;
     }
 
     return tasks;

@@ -9,10 +9,12 @@ import App from "./App";
 import reducer from "./store/reducers/tasks";
 import * as serviceWorker from "./serviceWorker";
 
-const composeEnhancer =
-  (window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) || compose;
+//const composeEnhancer =
+//  (window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) || compose;
+//const composeEnhancer = compose;
 
-const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, /* preloadedState, */ composeEnhancers(applyMiddleware(thunk)));
 const app = (
   <Provider store={store}>
     <App />
